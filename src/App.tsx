@@ -6,8 +6,8 @@ import { HomePage } from './layouts/HomePage/HomePage';
 import { SearchBooksPage } from './layouts/SearchBooksPage/SearchBooksPage';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { BookCheckoutPage } from './layouts/BookCheckoutPage/BookCheckoutPage';
-
-export const App = () =>{
+import AppConfig from "./AppConfig"
+const App = () =>{
   return (
     <div className='d-flex flex-column min-vh-100'>
       <Navbar />
@@ -25,9 +25,13 @@ export const App = () =>{
           <Route path="/checkout/:book">
             <BookCheckoutPage />
           </Route>
+          <Route path="/login">
+            <AppConfig/>
+          </Route>
         </Switch>
       </div>
       <Footer/>
     </div>
   );
 }
+export default App;
