@@ -7,6 +7,7 @@ import { SearchBooksPage } from './layouts/SearchBooksPage/SearchBooksPage';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { BookCheckoutPage } from './layouts/BookCheckoutPage/BookCheckoutPage';
 import AppConfig from "./AppConfig"
+
 const App = () =>{
   return (
     <div className='d-flex flex-column min-vh-100'>

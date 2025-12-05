@@ -1,6 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Link, NavLink } from "react-router-dom";
+import LoginButton from "../../LoginButton";
+import LogoutButton from "../../LogoutButton";
+
 
 export const Navbar = () => {
+
+  const { isAuthenticated } = useAuth0();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark main-color py-3">
       <div className="container-fluid">
@@ -31,9 +38,11 @@ export const Navbar = () => {
           </ul>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item m-1">
-              <a type="button" className="btn btn-outline-light">
-                Sign in
-              </a>
+              {isAuthenticated ? 
+                <LogoutButton></LogoutButton>
+              : 
+                <LoginButton></LoginButton>
+              }
             </li>
           </ul>
         </div>

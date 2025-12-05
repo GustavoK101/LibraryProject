@@ -1,4 +1,9 @@
+import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
+
 export const Heros = () => {
+  const { isAuthenticated } = useAuth0();
+
   return (
     <div>
       <div className="d-none d-lg-block">
@@ -14,9 +19,19 @@ export const Heros = () => {
                 Wheter it is to learn a new skill or grow within one, we will be
                 able to provide the content for you!
               </p>
-              <a className="btn main-color btn-lg text-white" href="#">
-                Sign up
-              </a>
+              {isAuthenticated ? 
+                <Link
+                  type="button"
+                  className="btn main-color btn-lg text-white"
+                  to="/search"
+                >
+                  Explore top Books
+                </Link>
+               : 
+                <Link className="btn main-color btn-lg text-white" to="/login">
+                  Sign up
+                </Link>
+              }
             </div>
           </div>
         </div>
@@ -27,9 +42,9 @@ export const Heros = () => {
               <p className="lead">
                 Try to check in daily as our collection is always changing! We
                 work nonstop to provide the most accurate book selection
-                possible for our Luv 2 Read students! we are dilligent about 
-                our book selection and our books are always
-                going to be our top priority.
+                possible for our Luv 2 Read students! we are dilligent about our
+                book selection and our books are always going to be our top
+                priority.
               </p>
             </div>
           </div>
@@ -51,9 +66,19 @@ export const Heros = () => {
                 Wheter it is to learn a new skill or grow within one, we will be
                 able to provide the content for you!
               </p>
-              <a className="btn main-color btn-lg text-white" href="#">
-                Sign up
-              </a>
+              {isAuthenticated ? 
+                <Link
+                  type="button"
+                  className="btn main-color btn-lg text-white"
+                  to="/search"
+                >
+                  Explore top Books
+                </Link>
+               : 
+                <Link className="btn main-color btn-lg text-white" to="/login">
+                  Sign up
+                </Link>
+              }
             </div>
           </div>
           <div className="m-2 ">
@@ -63,9 +88,9 @@ export const Heros = () => {
               <p className="lead">
                 Try to check in daily as our collection is always changing! We
                 work nonstop to provide the most accurate book selection
-                possible for our Luv 2 Read students! we are dilligent about 
-                our book selection and our books are always
-                going to be our top priority.
+                possible for our Luv 2 Read students! we are dilligent about our
+                book selection and our books are always going to be our top
+                priority.
               </p>
             </div>
           </div>
